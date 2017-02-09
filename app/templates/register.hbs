@@ -1,0 +1,35 @@
+<div class="register">
+  {{#if (eq view 'user')}}
+    <div class="user-form">
+      <h1 class="form-hdr">Tell us a little bit about yourself.</h1>
+      {{input placeholder="First" value=user.first}}
+      {{input placeholder="Last" value=user.last}}
+      {{input placeholder="Email" value=user.email}}
+      {{input type="password" placeholder="Password" value=user.password}}
+      {{input class="address" placeholder="Voter Registration Address" value=user.address}}
+      <button {{action "nextView"}}>Next</button>
+    </div>
+  {{else if (eq view 'issues')}}
+    <div class="issues-list">
+      <h1>Select issues that you care about.</h1>
+      <ul class="register-list">
+        {{#each model.issues as |issue|}}
+          <li class="register-item {{if issue.isSelected 'selected-item'}}" {{action "selectItem" issue}}>{{issue.name}}</li>
+        {{/each}}
+      </ul>
+      <button {{action "prevView"}}>Back</button>
+      <button {{action "nextView"}}>Next</button>
+    </div>
+  {{else}}
+    <h1>And a few organizations that you support.</h1>
+    <ul class="register-list">
+      {{#each model.orgs as |org|}}
+        <li class="register-item {{if org.isSelected 'selected-item'}}" {{action "selectItem" org}}>{{org.name}}</li>
+      {{/each}}
+    </ul>
+    <button {{action "prevView"}}>Back</button>
+    <button {{action "submit"}}>Submit</button>
+  {{/if}}
+</div>
+
+{{outlet}}

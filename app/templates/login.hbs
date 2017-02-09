@@ -1,0 +1,8 @@
+<div class="login">
+  <h1>Login</h1>
+  {{input class="login-input" placeholder="Email" value=email}}
+  {{input class="login-input" placeholder="Password" type="password" value=password}}
+  <button class="login-btn" {{action "login"}}>Login</button>
+</div>
+
+{{outlet}}

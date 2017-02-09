@@ -1,0 +1,26 @@
+.register {
+  margin-top: 8%;
+}
+
+.register-list {
+  list-style-type: none;
+  margin: 50px auto;
+  padding: 0;
+  width: 800px;
+}
+
+.register-item {
+  background-color: #405972;
+  border-radius: 45px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 10px 20px 0;
+  padding: 5px 15px;
+  &:hover {
+    background-color: #517293;
+  }
+}
+
+.selected-item {
+  background-color: #517293;
+}
