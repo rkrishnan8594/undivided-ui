@@ -15,7 +15,7 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
       newSession['authenticated']['uid'][0] = headers['uid'];
       newSession['authenticated']['client'][0] = headers['client'];
       this.get('session.store').persist(newSession);
-    } else if (status == 401) {
+    } else if (status === 401) {
       this.get('session').invalidate();
     }
     return this._super(...arguments);

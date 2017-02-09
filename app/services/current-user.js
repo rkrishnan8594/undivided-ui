@@ -1,5 +1,5 @@
 import Ember from 'ember';
-const { inject: { service }, isEmpty, RSVP, Service } = Ember;
+const { inject: { service }, Service } = Ember;
 
 export default Service.extend({
   session: service('session'),

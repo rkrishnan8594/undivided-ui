@@ -20,7 +20,6 @@ export default DeviseAuthenticator.extend({
   authenticate(identification, password) {
     return new Promise((resolve, reject) => {
       const useResponse = this.get('rejectWithResponse');
-      const { resourceName, identificationAttributeName, tokenAttributeName } = this.getProperties('resourceName', 'identificationAttributeName', 'tokenAttributeName');
       const data = { "email": identification, password };
 
       this.makeRequest(data).then((response) => {
