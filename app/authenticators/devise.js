@@ -1,9 +1,10 @@
 import Ember from 'ember';
 import DeviseAuthenticator from 'ember-simple-auth/authenticators/devise';
+import ENV from 'undivided-ui/config/environment';
 const { RSVP: { Promise }, run, isEmpty } = Ember;
 
 export default DeviseAuthenticator.extend({
-  serverTokenEndpoint: 'http://localhost:3000/api/auth/sign_in',
+  serverTokenEndpoint: `${ENV.apihost}/api/auth/sign_in`,
 
   restore(data) {
     return new Promise((resolve, reject) => {

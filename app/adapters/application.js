@@ -1,8 +1,9 @@
 import DS from 'ember-data';
+import ENV from 'undivided-ui/config/environment';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
-  host: 'http://localhost:3000',
+  host: ENV.apihost,
   namespace: 'api',
   authorizer: 'authorizer:devise',
   handleResponse(status, headers) {
