@@ -7,3 +7,14 @@
   font-size: 40px;
   margin-bottom: 20px;
 }
+
+.dashboard-signout {
+  background-color: $primary;
+  color: $secondary;
+  margin-top: 40px;
+  margin-right: 0;
+  &:hover {
+    background-color: $secondary;
+    color: $primary;
+  }
+}
