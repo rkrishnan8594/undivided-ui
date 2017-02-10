@@ -2,7 +2,7 @@ import Ember from 'ember';
 import RSVP from 'rsvp';
 import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-route-mixin';
 
-const { Route, $, isEmpty } = Ember;
+const { Route, $, keys } = Ember;
 
 export default Route.extend(UnauthenticatedRouteMixin, {
   session: Ember.inject.service('session'),
@@ -24,11 +24,12 @@ export default Route.extend(UnauthenticatedRouteMixin, {
     if (user.email && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)) {
       errors['email'] = 'Invalid email address.';
     }
-    if (!isEmpty(errors)) {
+    if (!(keys(errors).length === 0)) {
+      console.log(errors);
       this.controller.set('errors', errors);
       return false;
     }
-    this.controller.set('errors', []);
+    this.controller.set('errors', {});
     return true
   },
 
