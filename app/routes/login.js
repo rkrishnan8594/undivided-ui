@@ -10,7 +10,9 @@ export default Route.extend(UnauthenticatedRouteMixin, {
       let email = this.controller.get('email');
       let password = this.controller.get('password');
       this.get('session').authenticate('authenticator:devise', email, password).catch((reason) => {
-        this.set('errorMessage', reason.error || reason);
+        console.log('here');
+        this.controller.set('error', 'Invalid email or password');
+        //this.controller.set('error', reason.error || reason);
       });
     }
   }

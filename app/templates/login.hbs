@@ -3,6 +3,7 @@
   {{input class="login-input" placeholder="Email" value=email}}
   {{input class="login-input" placeholder="Password" type="password" value=password}}
   <button class="login-btn" {{action "login"}}>Login</button>
+  {{#if error}}<div class="login-error">{{error}}</div>{{/if}}
 </div>
 
 {{outlet}}
