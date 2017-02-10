@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #e3e7e1;
+  background-color: $primary;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -81,7 +81,7 @@ a {
 }
 
 .bg-gray {
-  background-color: #e3e7e1;
+  background-color: $primary;
 }
 
 .app-top {

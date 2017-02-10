@@ -7,7 +7,7 @@ export default Route.extend(UnauthenticatedRouteMixin, {
     this._super();
     $('body').addClass('landing-photo');
   },
-  deactivate: function() {
+  deactivate() {
     $('body').removeClass('landing-photo');
     $('body').addClass('bg-gray');
   },
