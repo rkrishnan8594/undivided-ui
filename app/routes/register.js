@@ -15,7 +15,8 @@ export default Route.extend(UnauthenticatedRouteMixin, {
     let user = this.controller.get('user');
     $.each(user, (attr, val) => {
       if (!val) {
-        errors[attr] = `${attr.charAt(0).toUpperCase() + attr.slice(1)} must be present.`;
+        let formatted = attr.charAt(0).toUpperCase() + attr.slice(1);
+        errors[attr] = `${formatted} must be present.`;
       }
     });
     if (user.password && user.password.length < 6) {
@@ -25,7 +26,6 @@ export default Route.extend(UnauthenticatedRouteMixin, {
       errors['email'] = 'Invalid email address.';
     }
     if (!(keys(errors).length === 0)) {
-      console.log(errors);
       this.controller.set('errors', errors);
       return false;
     }

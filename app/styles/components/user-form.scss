@@ -3,10 +3,22 @@
   width: 750px;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+  .user-form {
+    width: 320px;
+  }
+}
+
 .form-hdr {
   margin-bottom: 60px;
 }
 
 .address {
   width: 600px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+  .address {
+    width: 300px;
+  }
 }
