@@ -2,11 +2,26 @@
   {{#if (eq view 'user')}}
     <div class="user-form">
       <h1 class="form-hdr">Tell us a little bit about yourself.</h1>
-      {{input placeholder="First" value=user.first}}
-      {{input placeholder="Last" value=user.last}}
-      {{input placeholder="Email" value=user.email}}
-      {{input type="password" placeholder="Password" value=user.password}}
-      {{input class="address" placeholder="Voter Registration Address" value=user.address}}
+      <div class="user-input">
+        <p class="error">{{errors.first}}</p>
+        {{input class="first" placeholder="First" value=user.first}}
+      </div>
+      <div class="user-input">
+        <p class="error">{{errors.last}}</p>
+        {{input class="last" placeholder="Last" value=user.last}}
+      </div>
+      <div class="user-input">
+        <p class="error">{{errors.email}}</p>
+        {{input class="email" placeholder="Email" value=user.email}}
+      </div>
+      <div class="user-input">
+        <p class="error">{{errors.password}}</p>
+        {{input class="password" type="password" placeholder="Password" value=user.password}}
+      </div>
+      <div class="user-input">
+        <p class="error">{{errors.address}}</p>
+        {{input class="address" placeholder="Voter Registration Address" value=user.address}}
+      </div>
       <button {{action "nextView"}}>Next</button>
     </div>
   {{else if (eq view 'issues')}}
