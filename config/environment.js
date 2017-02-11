@@ -44,7 +44,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.apihost = 'http://localhost:3000';
+    ENV.apihost = '/';
   }
 
   if (environment === 'test') {
@@ -59,7 +59,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.apihost = 'https://undividedapi.herokuapp.com'
+    ENV.apihost = '/'
   }
 
   return ENV;
