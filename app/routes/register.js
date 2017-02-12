@@ -30,7 +30,7 @@ export default Route.extend(UnauthenticatedRouteMixin, {
       return false;
     }
     this.controller.set('errors', {});
-    return true
+    return true;
   },
 
   setupController(controller, model) {
