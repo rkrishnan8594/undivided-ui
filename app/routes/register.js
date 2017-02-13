@@ -19,8 +19,8 @@ export default Route.extend(UnauthenticatedRouteMixin, {
         errors[attr] = `${formatted} must be present.`;
       }
     });
-    if (user.password && user.password.length < 6) {
-      errors['password'] = 'Password must be at least six characters.';
+    if (user.password && user.password.length < 8) {
+      errors['password'] = 'Passwords must be longer than eight characters.';
     }
     if (user.email && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)) {
       errors['email'] = 'Invalid email address.';
